@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App */
+.app_container {
+    @apply flex bg-gray-200 overflow-scroll h-5/6 w-10/12 rounded-md shadow-lg;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app_container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sidebar Component */
+.sidebar {
+    flex: 0.35;
+}
+
+/* Chat Component */
+.chat {
+    flex: 0.65;
+}
+
+.chat_body {
+    background-image: url("https://i.pinimg.com/originals/35/f3/e9/35f3e9c4b86568b4919949a9307da2a9.png");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.chat_body::-webkit-scrollbar {
+    display: none;
+}
+
+.chat_bodySpanName {
+    position: absolute;
+    top: -18px;
+    font-weight: 800;
+}
+
+.chat_message {
+    @apply relative text-base p-2 rounded-md bg-white mb-7 w-max;
+}
+
+.chat_receiver {
+    @apply ml-auto bg-green-200;
 }
